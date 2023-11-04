@@ -1,13 +1,27 @@
-# Credit Card Fraud Detection
-Detect fraudulent credit card transactions through supervised machine learning
-  
-## 🤔 What is this?
-**Description:**  How to detect fraudulent credit card transactions?.
-Detect fraudulent credit card transactions through supervised machine learning, testing 6 classification models (w/CV) and their hyperparameters. Using also techniques like: 
-- Example-dependent cost-sensitive learning, calculating the weights for each sample based on the feature (transaction amount) and class weight 
-- OverSampling (SMOTE) and undersampling
+# Critical temperature risk detection 
+Detect risk of critical temperature in materials, through supervised machine learning
 
-It involves Data Understanding, research and design of Artificial Intelligence supervised learning algorithms for **classification** problem.
+## 🤔 What is this?
+**Description:**  How to detect risk of critical temperature in materials?.
+Detect risk of critical temperature in materials, through supervised machine learning, testing 6 classification models and 6 regression models (w/CV) and their hyperparameters
+
+Classification model  
+- RandomForest              
+- GradientBoosting                                    
+- DecisionTree                                        
+- LogisticRegression                                  
+- SVC
+- GaussianNB
+
+Regression model  
+- RandomForest_Regr
+- LinearModel_Trees
+- DecisionTree_Regr
+- GradBoosted_Regr_Trees
+- SVC
+- Linear_Regr_Tree 
+
+It involves Data Understanding, research and design of Artificial Intelligence supervised learning algorithms for **regression** and **classification** problems (we have two targets).
 
 A typical data science project has several phases (Cross-Industry Standard Process for Data Mining (CRISP-DM)). Phases adapted to this project
 1) Business Understanding: Understand the business problem and define the objectives of the project.
@@ -50,12 +64,14 @@ b) Data Visualization: Presenting insights through plots, charts, and graphs to 
 
 Data with the projects (to train the model and to apply the model) are in data dir.
  
-Consider the data `creditcard.csv` (inzip the file) and obtain a model to detect fraudulent credit card transactions.
-28 fields (only numerical input variables) which are the result of a PCA transformation. This means that your original dataset had more than 28 variables, and PCA was used to reduce it to 28 variables while retaining most of the information in the original dataset.
-- Feature 'Time' contains the seconds elapsed between each transaction and the first transaction in the dataset. 
-- The feature 'Amount' is the transaction Amount, this feature can be used for example-dependant cost-sensitive learning
-Note: The cost of a false positive (predicting fraud when there is none) might be the cost of investigating the transaction, while the cost of a false negative (failing to predict fraud when it is present) might be the cost of reimbursing the customer for the fraudulent transaction. The amount feature can be used in example-dependent cost-sensitive learning by assigning different costs to false positives and false negatives based on the amount of the transaction. For example, you might assign a higher cost to false negatives for high-value transactions because they are more costly to reimburse.
-- Feature 'Class' is the response variable and it takes value 1 in case of fraud and 0 otherwise.
+Consider the data `HA1-DatasetScaled.tsv` and obtain a model to detect risk of critical temperature in materials.
+
+Objective 1
+- Produce the best regression model for critical_temp (Dependent Variable)
+
+Objective 2
+- Produce the best binary classification model assuming as positive all instances with values of critical_temp >= 80.0 and as negatives all remaining cases
+
 
 ##  🚀 Quick Install
 
